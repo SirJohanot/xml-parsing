@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plants xmlns="plants">
+    <flower id = "1" >
+        <name>Rose</name>
+        <soilType>CLAY</soilType>
+        <growingTips>
+            <neededTemperature>20</neededTemperature>
+            <needsLight>true</needsLight>
+            <weeklyRequiredWater>1500</weeklyRequiredWater>
+        </growingTips>
+        <petalNumber>40</petalNumber>
+    </flower>
+    <flower id="2" origin="Persia">
+        <name>Dandelion</name>
+        <soilType>SILT</soilType>
+        <growingTips>
+            <neededTemperature>15</neededTemperature>
+            <needsLight>true</needsLight>
+            <weeklyRequiredWater>750</weeklyRequiredWater>
+        </growingTips>
+        <petalNumber>50</petalNumber>
+    </flower>
+    <tree id="3">
+        <name>Oak</name>
+        <soilType>CLAY</soilType>
+        <growingTips>
+            <neededTemperature>5</neededTemperature>
+            <needsLight>false</needsLight>
+            <weeklyRequiredWater>560</weeklyRequiredWater>
+        </growingTips>
+        <trunkDiameter>30</trunkDiameter>
+    </tree>
+    <tree id="4" origin="North America">
+        <name>Paper Birch</name>
+        <soilType>SAND</soilType>
+        <growingTips>
+            <neededTemperature>5</neededTemperature>
+            <needsLight>true</needsLight>
+            <weeklyRequiredWater>430</weeklyRequiredWater>
+        </growingTips>
+        <trunkDiameter>40</trunkDiameter>
+    </tree>
+</plants>

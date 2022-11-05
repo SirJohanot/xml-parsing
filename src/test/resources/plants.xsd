@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="plants"
+        xmlns:tns="plants"
+        elementFormDefault="qualified">
+    <element name="plants">
+        <complexType>
+            <choice maxOccurs="unbounded">
+                <element name="tree" type="tns:Tree"/>
+                <element name="flower" type="tns:Flower"/>
+            </choice>
+        </complexType>
+    </element>
+    <complexType name="Plant">
+        <sequence>
+            <element name="name" type="string"/>
+            <element name="soilType" type="tns:Soil"/>
+            <element name="growingTips" type="tns:Tips"/>
+        </sequence>
+        <attribute name="id" type="positiveInteger" use="required"/>
+        <attribute name="origin" type="tns:Origin"/>
+    </complexType>
+    <simpleType name="Origin">
+        <restriction base="string">
+            <pattern value="[A-Z][A-Za-z ]*"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="Soil">
+        <restriction>
+            <enumeration value="SAND"/>
+            <enumeration value="SILT"/>
+            <enumeration value="CLAY"/>
+        </restriction>
+    </simpleType>
+    <complexType name="Tips">
+        <sequence>
+            <element name="neededTemperature" type="positiveInteger"/>
+            <element name="needsLight" type="boolean"/>
+            <element name="weeklyRequiredWater" type="positiveInteger"/>
+        </sequence>
+    </complexType>
+    <complexType name="Tree">
+        <complexContent>
+            <extension base="tns:Plant">
+                <sequence>
+                    <element name="trunkDiameter" type="decimal"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="Flower">
+        <complexContent>
+            <extension base="tns:Plant">
+                <sequence>
+                    <element name="petalNumber" type="positiveInteger"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+</schema>
